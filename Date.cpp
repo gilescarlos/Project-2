@@ -145,10 +145,15 @@ Date Date::operator -- (int) {
 }
 
 int Date::operator - (const Date &right) {
-    if (isLeapYear(year))
+    if ((year == right.getYear()) && (month == right.getMonth())) {
+        return day - right.getDay();
+    } else if (year == right.getYear()) {
+        return (daysUpToMonth[(right.getMonth() - 1)] + right.getDay()) - (daysUpToMonth[month - 1] + day) ;
+    } else if (isLeapYear(year)) {
         return 365 * (year - right.year - 1) + (366 - (daysUpToMonth[month - 1] + day));
-    else
+    } else {
         return 365 * (year - right.year - 1) + (365 - (daysUpToMonth[month - 1] + day));
+    }
 }
 
 ostream& operator <<(ostream &strm, Date &date) {
