@@ -1,7 +1,5 @@
 #include <iostream>
 #include "PatientAccount.h"
-#include "Pharmacy.h"
-#include "Surgery.h"
 
 using namespace std;
 

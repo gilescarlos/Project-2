@@ -9,28 +9,40 @@
 
 using namespace std;
 
+/*! \class PatientAccount
+    \brief  A class to keep track of a patient's charges, days stayed in the hospital, and the hospital's daily rate.
+
+*/
+
 class PatientAccount {
 private:
-    double patientCharges;
-    int daysInHospital;
-    double dailyRate;
-    Pharmacy pharmacyCharges;
-    Surgery surgeryCharges;
+    double patientCharges; /**< total amount of the patient's charges */
+    int daysInHospital; /**< number of days the patient is in the hospital */
+    double dailyRate; /**< the daily rate for staying in the hospital */
+    Pharmacy pharmacyCharges; /**< amount of pharmacy charges */
+    Surgery surgeryCharges; /**< amount of surgery charges */
 
 public:
     PatientAccount();
+    //! Date onstructor
+    /*!
+     * Constructor to create new date.
+     * \param the total charges of the month
+     * \param the total number of days checked in
+     * \param the daily rate of stay
+     * */
     PatientAccount(double, int, double);
 
-    void setPharmacyCharges(int);
-    void setSurgeryCharges(int);
+    void setPharmacyCharges(int); /**< sets the amount of pharmacy charges */
+    void setSurgeryCharges(int); /**< sets the amount of surgery charges */
 
-    void setPatientCharges(double);
-    void setDaysInHospital(int);
-    void setDailyRate(double);
+    void setPatientCharges(double); /**< sets the total amount of charges */
+    void setDaysInHospital(int); /**< sets the days checked in */
+    void setDailyRate(double); /**< sets the daily rate */
 
-    double getPatientCharges();
-    int getDaysInHospital();
-    double getDailyRate();
+    double getPatientCharges(); /**< retrieves the patient's charges */
+    int getDaysInHospital(); /**< retrieves the number of days stayed */
+    double getDailyRate(); /**< retrieves the daily rate */
 };
 
 
